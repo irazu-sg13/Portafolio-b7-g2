@@ -1,3 +1,10 @@
 body{
     background-color: aliceblue;
 }
+
+#Presentación{
+    height: 88vh;
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+}
