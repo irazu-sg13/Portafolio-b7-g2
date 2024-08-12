@@ -16,11 +16,11 @@ body{
 }
 
 #proyecto-1 {
-    background-image: url('Assets/google.png');
+    background-image: url('google.png');
 }
 
 #proyecto-2 {
-    background-image: url('Assets/proyecto.png');
+    background-image: url('proyecto.png');
 }
 
 .text-shadow-1 {
