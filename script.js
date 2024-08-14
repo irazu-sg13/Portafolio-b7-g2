@@ -11,10 +11,10 @@ let typewriter = new Typewriter(app, {
 typewriter
   .pauseFor(2500) // milisegundos 2.5 segundos
   .typeString('Irazu Serrano')
-  .pauseFor(300)
+  .pauseFor(4000)
   .deleteAll()
-  .typeString('Desarrolladora FRONTEND JR')
-  .pauseFor(1000)
+  .typeString('Física y Desarrolladora FRONTEND JR.')
+  .pauseFor(2000)
   .start();
 
 let frase = document.getElementById('frase');
@@ -29,7 +29,7 @@ typewriterFrase
   .typeString('"La vida no se mide por los logros, sino por los momentos que nos hacen vivir."')
   .pauseFor(300)
   .deleteAll()
-  .typeString('Dalai Lama IX')
+  .typeString('')
   .pauseFor(1000)
   .start();
 
