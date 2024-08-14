@@ -26,7 +26,7 @@ let typewriterFrase = new Typewriter(frase, {
 // a veces tiene el operador punto
 typewriterFrase
   .pauseFor(2500) // milisegundos 2.5 segundos
-  .typeString('"...Por lo tanto, lo que debemos hacer es esforzarnos y perseverar y NUNCA RENDIRNOS."')
+  .typeString('"La vida no se mide por los logros, sino por los momentos que nos hacen vivir."')
   .pauseFor(300)
   .deleteAll()
   .typeString('Dalai Lama IX')

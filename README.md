@@ -11,7 +11,7 @@ La página es responsiva (adaptable a diferentes tamaños de pantalla) e incluye
 ## Secciones de mi sitio
 
 - Sobre mí
-![Presentación](Presentacion.png)
+![Presentación](Presentacion.jpeg)
 
 - Habilidades
 - Conocimientos en

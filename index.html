@@ -18,6 +18,11 @@
 
 <body>
 
+    <!--   <audio id="miAudio" autoplay>
+    <source src="assets/music/man.mp3" type="audio/mpeg">
+  </audio>
+ -->
+
     <header>
 
         <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
@@ -54,10 +59,12 @@
                             <a class="nav-link" href="#contacto">Contacto</a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
-                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    <form class="d-flex" role="search" id="searchForm">
+                        <input class="form-control me-2" type="search" id="searchInput" placeholder="Buscar" aria-label="Buscar">
+                        <button class="btn btn-outline-success" type="button" onclick="performSearch()">Buscar</button>
                     </form>
+                    <div id="searchResults"></div>
+                    
                 </div>
             </div>
         </nav>
@@ -68,19 +75,24 @@
 
     <main>
 
-        <section id="presentacion" class="px-4 py-5 my-5 text-center">
-            <img class="d-block mx-auto mb-4" src="" alt="" width="" height="57">
-            <h1 class="display-5 fw-bold text-body-emphasis">Irazu Serrano</h1>
+        <section id="presentacion" class="px-4 py-5 my-0 text-center">
+            <img class="d-block mx-auto mb-4" src="" alt="" width="" height="65">
+            <h1 class="display-5 fw-bold" style="color: #fff;">Irazu Serrano</h1>
             <div class="col-lg-6 mx-auto">
-                <p class="lead mb-4">Egresada de la Licenciatura en Física y estudiante de la Licenciatura en Enseñanza
-                    de las Matemáticas. Me encuentro liberando mi servicio social en el IFUNAM, también realizo
-                    actividades de divulgadora científica y me dedico a mejorar mis habilidades como desarrolladora web
-                    junior. Como física tengo conocimientos en lenguajes de programación, </p>
+                <p class="lead mb-4 " style="color: #fff">Egresada de la Licenciatura en Física y estudiante de la Licenciatura en Enseñanza de las Matemáticas, 
+                    actualmente realizando mi servicio social en el IFUNAM. Como divulgadora científica, me apasiona comunicar ideas complejas de manera accesible y atractiva. 
+                    Además, estoy enfocada en mejorar mis habilidades como desarrolladora web junior, interesándome en continuar aprendiendo como desarrolladora frontend para realizar proyectos diversos. 
+                    Como física, poseo conocimientos en diversos lenguajes de programación, lo que me permite abordar proyectos cada vez más complejos.
+                </p>
+
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Contáctame</button>
+                    <a href="#contacto">
+                    <button type="button" id="boton" class="btn btn-success btn-lg px-4 gap-3">Contáctame</button></a>
+                    <a href="mailto:jani.serrano303@gmail.com">
                     <button type="button"
-                        class="btn btn-outline-secondary btn-lg px-4">jani.serrano303@gmail.com</button>
+                        class="btn btn-outline-secondary btn-lg px-4">jani.serrano303@gmail.com</button></a>
                 </div>
+                <img class="rounded-circle border border-success p-2 border-opacity-75" src="foto.jpg" height="200" alt="Janitzi Irazu Serrano Gonzaga" style="margin-top: 30px;">
             </div>
         </section>
 
@@ -96,8 +108,9 @@
                     <h3 class="fs-2 text-body-emphasis">Desarrollo Web</h3>
                     <p>Tengo más de un año de experiencia como desarrolladora web junior, creando páginas web usando
                         HTML, JS, CSS y Bootstrap.</p>
-                    <a href="#" class="icon-link">
-                        Portafolio Github
+                    <a href="https://github.com/irazu-sg13" class="icon-link">
+                        <i class="bi bi-github"></i>
+                        Portafolio GitHub
                         <svg class="bi">
                             <use xlink:href="#chevron-right"></use>
                         </svg>
@@ -112,13 +125,23 @@
                     <h3 class="fs-2 text-body-emphasis">Divulgación Científica</h3>
                     <p>Tengo 5 años de experiencia creando contenido de divulgación científica para redes sociales, he
                         sido tallerista en cursos de verano dedicados a la ciencia, física y matemáticas, así como
-                        conferencista.</p>
-                    <a href="#" class="icon-link">
-                        Portafolio OneDrive
+                        conferencista en temáticas de procesos fotográficos antiguos.</p>
+                    <a href="https://www.youtube.com/c/PinzonesCuánticos" class="icon-link">
+                        <i class="bi bi-youtube primary"></i>
+                        Pinzones Cuánticos
                         <svg class="bi">
                             <use xlink:href="#chevron-right"></use>
                         </svg>
                     </a>
+
+                    <a href="https://www.canva.com/design/DAGNtBFFCno/E8ASSUrnYq70uHjt-bbFfA/edit?utm_content=DAGNtBFFCno&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="icon-link">
+                        <i class="bi bi-award"></i>
+                        Portafolio - Divulgación Científica
+                        <svg class="bi">
+                            <use xlink:href="#chevron-right"></use>
+                        </svg>
+                    </a>
+                     
                 </div>
 
                 <div class="feature col">
@@ -130,7 +153,8 @@
                     <p>Tengo 6 años de experiencia usando lenguajes de programación como Python, C++, Mathematica,
                         MatLab, HTML y sistemas operativos como Windows y Linux.</p>
                     <a href="#" class="icon-link">
-                        Portafolio
+                        <i class="bi bi-collection"></i>
+                        Repositorio
                         <svg class="bi">
                             <use xlink:href="#chevron-right"></use>
                         </svg>
@@ -160,7 +184,7 @@
                         class="feature-icon d-inline-flex align-items-center justify-content-center fs-3 px-3 text-color">
                         <i class="bi bi-filetype-js"></i>
                     </div>
-                    <h3 class="fs-5 text-body-emphasis text-color2">JS</h3>
+                    <h3 class="fs-5 text-body-emphasis text-color2">JavaScript</h3>
                 </div>
                 <div class="feature col">
                     <div
@@ -188,21 +212,21 @@
                         class="feature-icon d-inline-flex align-items-center justify-content-center fs-3 px-3 text-color">
                         <i class="bi bi-camera2"></i>
                     </div>
-                    <h3 class="fs-5 text-body-emphasis text-color2">Fotografía</h3>
+                    <h3 class="fs-5 text-body-emphasis text-color2">Fotógrafa</h3>
                 </div>
                 <div class="feature col">
                     <div
                         class="feature-icon d-inline-flex align-items-center justify-content-center fs-3 px-3 text-color">
-                        <i class="bi bi-filetype-java"></i>
+                        <i class="bi bi-file-earmark-font-fill"></i>
                     </div>
-                    <h3 class="fs-5 text-body-emphasis text-color2">Java</h3>
+                    <h3 class="fs-5 text-body-emphasis text-color2">Manejo de LaTeX</h3>
                 </div>
                 <div class="feature col">
                     <div
                         class="feature-icon d-inline-flex align-items-center justify-content-center fs-3 px-3 text-color">
-                        <i class="bi bi-filetype-xml"></i>
+                        <i class="bi bi-person-video3"></i>
                     </div>
-                    <h3 class="fs-5 text-body-emphasis text-color2">XML</h3>
+                    <h3 class="fs-5 text-body-emphasis text-color2">Mentora académica</h3>
                 </div>
 
             </div>
@@ -224,7 +248,7 @@
                             <ul class="d-flex list-unstyled mt-auto">
                                 <li class="me-auto">
 
-                                    <a class="link-light" href="https://clon-google-b7-g2.vercel.app/" target="_blank">DA CLICK</a>
+                                    <a class="link-light" href="https://clon-google-b7-g2.vercel.app/" target="_blank">Ver proyecto</a>
 
                                 </li>
                             </ul>
@@ -233,7 +257,6 @@
                         </div>
                     </div>
                 </div>
-
 
                 <div class="col">
                     <div id="proyecto-2"
@@ -243,13 +266,30 @@
                             <ul class="d-flex list-unstyled mt-auto">
                                 <li class="me-auto">
 
-                                    <a class="link-light" href="" target="_blank">DA CLICK</a>
+                                    <a class="link-light" href="https://mujeres-en-fisica-pagina-web-iyjn.vercel.app/" target="_blank">Ver proyecto</a>
 
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
+
+                <div class="col">
+                    <div id="proyecto-3"
+                        class="proyecto card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Primer Portafolio</h3>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+
+                                    <a class="link-light" href="https://irazu-sg13.github.io/Portafolio/" target="_blank">Ver proyecto</a>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -272,40 +312,29 @@
 
                     <div class="carousel-item active">
                         <article class="container py-5 text-center px-5">
-                            <img class="rounded-5" src="assets/ada.jpeg" height="300" alt="Ada Lovelace">
-                            <h3 class="my-3">Ada Lovelace</h3>
-                            <p>Trabajar con Malinali B. ha sido una experiencia extraordinaria. Su dedicación y
-                                habilidad para investigar y sintetizar información compleja sobre las costumbres de
-                                Yucatán fueron impresionantes. Malinali se comunica de manera efectiva y trabaja en
-                                equipo con una actitud siempre colaborativa y positiva. Su atención al detalle y su
-                                compromiso con la excelencia son dignos de admiración. Recomiendo a Malinali para
-                                cualquier proyecto que requiera investigación detallada y trabajo en equipo.</p>
+                            <img class="rounded-5" src="eytan.jpg" height="200" alt="Eytan Rebollar">
+                            <h3 class="my-3">Eytan Rebollar</h3>
+                            <p>Trabajar con Irazu ha sido una experiencia enriquecedora tanto a nivel profesional como personal. Como colega en el ámbito de la enseñanza de las matemáticas, he visto de primera mano su profundo conocimiento en física y matemáticas, que no solo aplica con precisión, sino que también lo comunica de una manera accesible y apasionada a sus estudiantes.
+                                Lo que destaca de Irazu es su compromiso inquebrantable con la educación de calidad. Ya sea en el aula o en el desarrollo de material educativo, siempre está buscando maneras innovadoras de involucrar a los estudiantes y hacer que temas complejos sean comprensibles y relevantes para ellos. Su creatividad y dedicación han sido una inspiración para todo el equipo.</p>
+                            <h6>Colega de trabajo y estudios, UAEMéx y UnADM.</h6>
                         </article>
                     </div>
 
                     <div class="carousel-item">
                         <article class="container py-5 text-center px-5">
-                            <img class="rounded-5" src="assets/grace.jpeg" height="300" alt="Ada Lovelace">
-                            <h3 class="my-3">Grace Hopper</h3>
-                            <p>Trabajar con Malinali B. ha sido una experiencia extraordinaria. Su dedicación y
-                                habilidad para investigar y sintetizar información compleja sobre las costumbres de
-                                Yucatán fueron impresionantes. Malinali se comunica de manera efectiva y trabaja en
-                                equipo con una actitud siempre colaborativa y positiva. Su atención al detalle y su
-                                compromiso con la excelencia son dignos de admiración. Recomiendo a Malinali para
-                                cualquier proyecto que requiera investigación detallada y trabajo en equipo.</p>
+                            <img class="rounded-5" src="litzi.jfif" height="200" alt="Litzi Sánchez">
+                            <h3 class="my-3">Litzi Sánchez</h3>
+                            <p>Irazu ha demostrado ser una alumna responsable y muy creativa durante el curso. Su interés por aprender la motiva a mejorar con cada proyecto que realiza.</p>
+                            <h6>Mentora Técnica en Tecnolochicas.</h6>                        
                         </article>
                     </div>
 
                     <div class="carousel-item">
                         <article class="container py-5 text-center px-5">
-                            <img class="rounded-5" src="assets/hady.webp" height="300" alt="Ada Lovelace">
-                            <h3 class="my-3">Hedy</h3>
-                            <p>Trabajar con Malinali B. ha sido una experiencia extraordinaria. Su dedicación y
-                                habilidad para investigar y sintetizar información compleja sobre las costumbres de
-                                Yucatán fueron impresionantes. Malinali se comunica de manera efectiva y trabaja en
-                                equipo con una actitud siempre colaborativa y positiva. Su atención al detalle y su
-                                compromiso con la excelencia son dignos de admiración. Recomiendo a Malinali para
-                                cualquier proyecto que requiera investigación detallada y trabajo en equipo.</p>
+                            <img class="rounded-5" src="mirandajaramillo.jpg" height="200" alt="Miranda Jaramillo">
+                            <h3 class="my-3">Miranda Jaramillo</h3>
+                            <p>Recomiendo a Irazu para cualquier proyecto que requiera investigación detallada y trabajo en equipo, su desempeño es muy bueno y además tiene ideas creativas.</p>
+                            <h6>Mentora de Tecnolochicas PRO 2023</h6>
                         </article>
                     </div>
 
@@ -334,7 +363,8 @@
                 <i class="bi bi-moon-stars-fill fs-1 text-body-secondary"></i>
             </div>
 
-            <h4 id="frase" class="text-center text-body-secondary mt-3 mb-5">"...."</h4>
+            <h4 id="frase" class="text-center text-body-secondary mt-3 mb-5">"La vida no se mide por los logros, sino por los momentos que nos hacen vivir."</h4>
+            <h5 id="frase1" class="text-center text-body-secondary mt-3 mb-5">Fís. Lise Meitner</h5>
 
             <ul class="nav justify-content-center pb-3 mb-3">
 
@@ -351,9 +381,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" target="_blank"
+                    <a href="mailto:jani.serrano303@gmail.com" target="_blank"
                         class="nav-link px-2 text-body-secondary">
-                        <i class="bi bi-envelope fs-1"></i>
+                        <i class="bi bi-envelope-at-fill fs-1"></i>
                     </a>
                 </li>
 
